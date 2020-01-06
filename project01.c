@@ -20,3 +20,6 @@ void loop() {
   myTOLED.print("Hello World");
   myTOLED.setTextCursor(0, 0);
 }
+
+
+https://github.com/sparkfun/HyperDisplay_UG2856KLBAG01_ArduinoLibrary/issues/2
