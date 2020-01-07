@@ -16,10 +16,9 @@ void setup() {
 }
 
 void loop() {
-  //wind_info_t defaultWindow, defaultWindow;
-  myTOLED.print("Hello World");
-  myTOLED.setTextCursor(0, 0);
+  myTOLED.setContrastControl(0);
+  myTOLED.pixelSet(84, 3);
+  
+
+  
 }
-
-
-https://github.com/sparkfun/HyperDisplay_UG2856KLBAG01_ArduinoLibrary/issues/2
