@@ -1,3 +1,6 @@
+#include "HyperDisplay_UG2856KLBAG01.h"   
+#define SERIAL_PORT Serial  
+#define WIRE_PORT Wire
 void setup() {
   // put your setup code here, to run once:
 
