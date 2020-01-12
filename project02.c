@@ -190,5 +190,65 @@ void WordMover_layer_5(int ps_y){
 
 void WordMover_layer_6(int ps_y){
   /////////
-  myTOLED.pixelSet(24 , ps_y); myTOLED.pixelSet(28 , ps_y); myTOLED.pixelSet(30 , ps_y); myTOLED.pixelSet(34 , ps_y); myTOLED.pixelSet(36 , ps_y); myTOLED.pixelSet(38 , ps_y); myTOLED.pixelSet(40 , ps_y); myTOLED.pixelSet(44 , ps_y); myTOLED.pixelSet(47 , ps_y); myTOLED.pixelSet(51 , ps_y); myTOLED.pixelSet(53 , 31); myTOLED.pixelSet(57 , 31); myTOLED.pixelSet(59 , 31); myTOLED.pixelSet(64 , 31); myTOLED.pixelSet(66 , 31); myTOLED.pixelSet(70 , 31);
+  myTOLED.pixelSet(24 , ps_y); myTOLED.pixelSet(28 , ps_y); myTOLED.pixelSet(30 , ps_y); myTOLED.pixelSet(34 , ps_y); myTOLED.pixelSet(36 , ps_y); myTOLED.pixelSet(38 , ps_y); myTOLED.pixelSet(40 , ps_y); myTOLED.pixelSet(44 , ps_y); myTOLED.pixelSet(47 , ps_y); myTOLED.pixelSet(51 , ps_y); myTOLED.pixelSet(53 , ps_y); myTOLED.pixelSet(57 , ps_y); myTOLED.pixelSet(59 , ps_y); myTOLED.pixelSet(64 , ps_y); myTOLED.pixelSet(66 , ps_y); myTOLED.pixelSet(70 , ps_y);
+}
+
+void WordMover_layer_7(int ps_y){
+  ///////
+  myTOLED.pixelSet(24 , ps_y); myTOLED.pixelSet(25 , ps_y); myTOLED.pixelSet(26 , ps_y); myTOLED.pixelSet(27 , ps_y); myTOLED.pixelSet(28 , ps_y); myTOLED.pixelSet(30 , ps_y); myTOLED.pixelSet(31 , ps_y); myTOLED.pixelSet(32 , ps_y); myTOLED.pixelSet(33 , ps_y); myTOLED.pixelSet(34 , ps_y); myTOLED.pixelSet(36 , ps_y); myTOLED.pixelSet(38 , ps_y); myTOLED.pixelSet(40 , ps_y); myTOLED.pixelSet(44 , ps_y); myTOLED.pixelSet(47 , ps_y); myTOLED.pixelSet(51 , ps_y); myTOLED.pixelSet(53 , ps_y); myTOLED.pixelSet(57 , ps_y); myTOLED.pixelSet(59 , ps_y); myTOLED.pixelSet(64 , ps_y); myTOLED.pixelSet(66 , ps_y); myTOLED.pixelSet(70 , ps_y);
+}
+
+void WordMover_layer_8(int ps_y){
+  /////////////////
+  myTOLED.pixelSet(24 , ps_y); myTOLED.pixelSet(28 , ps_y); myTOLED.pixelSet(30 , ps_y); myTOLED.pixelSet(36 , ps_y); myTOLED.pixelSet(38 , ps_y); myTOLED.pixelSet(40 , ps_y); myTOLED.pixelSet(44 , ps_y); myTOLED.pixelSet(47 , ps_y); myTOLED.pixelSet(49 , ps_y); myTOLED.pixelSet(51 , ps_y); myTOLED.pixelSet(53 , ps_y); myTOLED.pixelSet(57 , ps_y); myTOLED.pixelSet(59 , ps_y); myTOLED.pixelSet(64 , ps_y); myTOLED.pixelSet(66 , ps_y); myTOLED.pixelSet(70 , ps_y);
+}
+
+void WordMover_layer_9(int ps_y){
+  ////////////
+  myTOLED.pixelSet(24 ,ps_y); myTOLED.pixelSet(28 ,ps_y); myTOLED.pixelSet(30 ,ps_y); myTOLED.pixelSet(36 ,ps_y); myTOLED.pixelSet(38 ,ps_y); myTOLED.pixelSet(40 ,ps_y); myTOLED.pixelSet(44 ,ps_y); myTOLED.pixelSet(47 ,ps_y); myTOLED.pixelSet(49 ,ps_y); myTOLED.pixelSet(51 ,ps_y); myTOLED.pixelSet(53 ,ps_y); myTOLED.pixelSet(57 ,ps_y); myTOLED.pixelSet(59 , ps_y); myTOLED.pixelSet(64 ,ps_y); myTOLED.pixelSet(66 ,ps_y); myTOLED.pixelSet(70 ,ps_y);
+}
+
+void WordMover_layer_10(int ps_y){
+  /////////
+  myTOLED.pixelSet(24 , ps_y); myTOLED.pixelSet(28 , ps_y); myTOLED.pixelSet(30 , ps_y); myTOLED.pixelSet(36 , ps_y); myTOLED.pixelSet(38 , ps_y); myTOLED.pixelSet(40 , ps_y); myTOLED.pixelSet(44 , ps_y); myTOLED.pixelSet(47 , ps_y); myTOLED.pixelSet(49 , ps_y); myTOLED.pixelSet(51 , ps_y); myTOLED.pixelSet(53 , ps_y); myTOLED.pixelSet(57 , ps_y); myTOLED.pixelSet(59 , ps_y); myTOLED.pixelSet(64 , ps_y); myTOLED.pixelSet(66 , ps_y); myTOLED.pixelSet(70 , ps_y);
+}
+
+void WordMover_layer_11(int ps_y){
+  /////////
+  myTOLED.pixelSet(24 , ps_y); myTOLED.pixelSet(28 , ps_y); myTOLED.pixelSet(30 , ps_y); myTOLED.pixelSet(36 , ps_y); myTOLED.pixelSet(38 , ps_y); myTOLED.pixelSet(40 , ps_y); myTOLED.pixelSet(44 , ps_y); myTOLED.pixelSet(47 , ps_y); myTOLED.pixelSet(49 , ps_y); myTOLED.pixelSet(51 , ps_y); myTOLED.pixelSet(53 , ps_y); myTOLED.pixelSet(57 , ps_y); myTOLED.pixelSet(59 , ps_y); myTOLED.pixelSet(64 , ps_y); myTOLED.pixelSet(66 , ps_y); myTOLED.pixelSet(70 , ps_y);
+}
+
+void WordMover_layer_12(int ps_y){
+  /////////////
+  myTOLED.pixelSet(24 , ps_y); myTOLED.pixelSet(28 , ps_y); myTOLED.pixelSet(32 , ps_y); myTOLED.pixelSet(33 , ps_y); myTOLED.pixelSet(34 , ps_y); myTOLED.pixelSet(36 , ps_y); myTOLED.pixelSet(38 , ps_y); myTOLED.pixelSet(41 , ps_y); myTOLED.pixelSet(43 , ps_y); myTOLED.pixelSet(48 , ps_y); myTOLED.pixelSet(50 , ps_y); myTOLED.pixelSet(54 , ps_y); myTOLED.pixelSet(55 , ps_y); myTOLED.pixelSet(56 , ps_y); myTOLED.pixelSet(59 , ps_y); myTOLED.pixelSet(64 , ps_y); myTOLED.pixelSet(67 , ps_y); myTOLED.pixelSet(68 , ps_y); myTOLED.pixelSet(69 , ps_y);
+}
+
+void WordMover_layer_1x(int ps_x){
+  /////////////
+  myTOLED.pixelSet(ps_x, 26); myTOLED.pixelSet(ps_x, 26); myTOLED.pixelSet(ps_x, 26); myTOLED.pixelSet(ps_x, 26); myTOLED.pixelSet(ps_x ,26); myTOLED.pixelSet(ps_x ,26); myTOLED.pixelSet(ps_x ,26); myTOLED.pixelSet(ps_x ,26);
+
+}
+
+void WordMover_layer_2x(int ps_x){
+  ///////
+  myTOLED.pixelSet(ps_x ,27); myTOLED.pixelSet(ps_x, 27); myTOLED.pixelSet(ps_x, 27); myTOLED.pixelSet(ps_x ,27); myTOLED.pixelSet(ps_x ,27); myTOLED.pixelSet(ps_x ,27); myTOLED. pixelSet(ps_x ,27); myTOLED.pixelSet(ps_x ,27);
+}
+
+void WordMover_layer_3x(int ps_x){
+  ////////////////
+  myTOLED.pixelSet(ps_x ,28); myTOLED.pixelSet(ps_x ,28); myTOLED.pixelSet(ps_x ,28); myTOLED.pixelSet(ps_x ,28); myTOLED.pixelSet(ps_x ,28); myTOLED.pixelSet(ps_x ,28); myTOLED.pixelSet(ps_x ,28); myTOLED.pixelSet(ps_x ,28);
+}
+
+void WordMover_layer_4x(int ps_x){
+  //////////////////
+  myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29); myTOLED.pixelSet(ps_x , 29);
+}
+
+void WordMover_layer_5x(int ps_x){
+  //////////////
+  myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30); myTOLED.pixelSet(ps_x , 30);
+}
+
+void WordMover_layer_6x(int ps_x){
+  
 }
