@@ -16,7 +16,15 @@ void setup() {
 
   int Layer1_x[8] = {24, 28, 36, 38, 47, 51, 64, 70};
   int Layer2_x[8] = {24, 28, 36, 38, 47, 51, 64, 70};
-  int Layer3_x[8] = {24, 28, 36, 38, 47, };
+  int Layer3_x[8] = {24, 28, 36, 38, 47, 51, 64, 70};
+  int Layer4_x[20] = {24, 28, 31, 32, 33, 36, 38, 41, 42, 43, 47, 51, 54, 55, 56, 59, 61, 62, 64, 70};
+  int Layer5_x[18] = {24, 28, 30, 34, 36, 38, 40, 44, 47, 51, 53, 57, 59, 60, 64, 67, 68, 69, 70};
+  int Layer6_x[16] = {24, 28, 30, 34, 36, 38, 40, 44, 47, 51, 53, 57, 59, 64, 66, 70};
+  int Layer7_x[22] = {24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 36, 38, 40, 44, 47, 51, 53, 57, 59, 64, 66, 70};
+  int Layer8_x[16] = {24, 28, 30, 36, 38, 40, 44, 47, 49, 51, 53, 57, 59, 64, 66, 70};
+  int Layer9_x[16] = {24, 28, 30, 36, 38, 40, 44, 47, 49, 51, 53, 57, 59, 64, 66, 70};
+  int Layer10_x[16] = {24, 28, 30, 36, 38, 40, 44, 47, 49, 51, 53, 57, 59, 64, 66, 70};
+
 
 
 
@@ -79,9 +87,13 @@ void startScreen( void ) {
 void HelloWorld( void ) {
 //  
   myTOLED.pixelSet(24, 26); myTOLED.pixelSet(28, 26); myTOLED.pixelSet(36, 26); myTOLED.pixelSet(38, 26); myTOLED.pixelSet(47 ,26); myTOLED.pixelSet(51 ,26); myTOLED.pixelSet(64 ,26); myTOLED.pixelSet(70 ,26);
+  ///8
   myTOLED.pixelSet(24 ,27); myTOLED.pixelSet(28, 27); myTOLED.pixelSet(36, 27); myTOLED.pixelSet(38 ,27); myTOLED.pixelSet(47 ,27); myTOLED.pixelSet(51 ,27); myTOLED. pixelSet(64 ,27); myTOLED.pixelSet(70 ,27);
+  ///8
   myTOLED.pixelSet(24 ,28); myTOLED.pixelSet(28 ,28); myTOLED.pixelSet(36 ,28); myTOLED.pixelSet(38 ,28); myTOLED.pixelSet(47 ,28); myTOLED.pixelSet(51 ,28); myTOLED.pixelSet(64 ,28); myTOLED.pixelSet(70 ,28);
+  ///8
   myTOLED.pixelSet(24 , 29); myTOLED.pixelSet(28 , 29); myTOLED.pixelSet(31 , 29); myTOLED.pixelSet(32 , 29); myTOLED.pixelSet(33 , 29); myTOLED.pixelSet(36 , 29); myTOLED.pixelSet(38 , 29); myTOLED.pixelSet(41 , 29); myTOLED.pixelSet(42 , 29); myTOLED.pixelSet(43 , 29); myTOLED.pixelSet(47 , 29); myTOLED.pixelSet(51 , 29); myTOLED.pixelSet(54 , 29); myTOLED.pixelSet(55 , 29); myTOLED.pixelSet(56 , 29); myTOLED.pixelSet(59 , 29); myTOLED.pixelSet(61 , 29); myTOLED.pixelSet(62 , 29); myTOLED.pixelSet(64 , 29); myTOLED.pixelSet(70 , 29);
+  ///20
   myTOLED.pixelSet(24 , 30); myTOLED.pixelSet(28 , 30); myTOLED.pixelSet(30 , 30); myTOLED.pixelSet(34 , 30); myTOLED.pixelSet(36 , 30); myTOLED.pixelSet(38 , 30); myTOLED.pixelSet(40 , 30); myTOLED.pixelSet(44 , 30); myTOLED.pixelSet(47 , 30); myTOLED.pixelSet(51 , 30); myTOLED.pixelSet(53 , 30); myTOLED.pixelSet(57 , 30); myTOLED.pixelSet(59 , 30); myTOLED.pixelSet(60 , 30); myTOLED.pixelSet(64 , 30); myTOLED.pixelSet(67 , 30); myTOLED.pixelSet(68 , 30); myTOLED.pixelSet(69 , 30); myTOLED.pixelSet(70 , 30);
   myTOLED.pixelSet(24 , 31); myTOLED.pixelSet(28 , 31); myTOLED.pixelSet(30 , 31); myTOLED.pixelSet(34 , 31); myTOLED.pixelSet(36 , 31); myTOLED.pixelSet(38 , 31); myTOLED.pixelSet(40 , 31); myTOLED.pixelSet(44 , 31); myTOLED.pixelSet(47 , 31); myTOLED.pixelSet(51 , 31); myTOLED.pixelSet(53 , 31); myTOLED.pixelSet(57 , 31); myTOLED.pixelSet(59 , 31); myTOLED.pixelSet(64 , 31); myTOLED.pixelSet(66 , 31); myTOLED.pixelSet(70 , 31);
   myTOLED.pixelSet(24 , 32); myTOLED.pixelSet(25 , 32); myTOLED.pixelSet(26 , 32); myTOLED.pixelSet(27 , 32); myTOLED.pixelSet(28 , 32); myTOLED.pixelSet(30 , 32); myTOLED.pixelSet(31 , 32); myTOLED.pixelSet(32 , 32); myTOLED.pixelSet(33 , 32); myTOLED.pixelSet(34 , 32); myTOLED.pixelSet(36 , 32); myTOLED.pixelSet(38 , 32); myTOLED.pixelSet(40 , 32); myTOLED.pixelSet(44 , 32); myTOLED.pixelSet(47 , 32); myTOLED.pixelSet(51 , 32); myTOLED.pixelSet(53 , 32); myTOLED.pixelSet(57 , 32); myTOLED.pixelSet(59 , 32); myTOLED.pixelSet(64 , 32); myTOLED.pixelSet(66 , 32); myTOLED.pixelSet(70 , 32);
