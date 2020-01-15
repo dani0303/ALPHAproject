@@ -294,7 +294,11 @@ void layer_12x(int ps_x){
     myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37); myTOLED.pixelSet(ps_x , 37);
 }
 
-void WordMover(int layer_x, int layer_y, int value_wanted, int value present){
+void WordMover(int layer_x#, int layer_y, int value_wanted, int value_present){
+  if (value_present > value_wanted){
+
+    
+  }
 
 
 
