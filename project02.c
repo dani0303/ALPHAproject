@@ -295,3 +295,10 @@ void layer_12x(int ps_x){
 }
 
 void WordMover(int layer_x, int layer_y, int value_wanted, int value_present){
+  
+  
+  
+  
+  
+  
+}
