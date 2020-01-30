@@ -106,10 +106,6 @@ void helloworld_Mover(int x_value, int y_value){
   myTOLED.pixelSet(24+x_value , 37+y_value); myTOLED.pixelSet(28+x_value , 37+y_value); myTOLED.pixelSet(32+x_value , 37+y_value); myTOLED.pixelSet(33+x_value , 37+y_value); myTOLED.pixelSet(34+x_value , 37+y_value); myTOLED.pixelSet(36+x_value , 37+y_value); myTOLED.pixelSet(38+x_value , 37+y_value); myTOLED.pixelSet(41+x_value , 37+y_value); myTOLED.pixelSet(43+x_value , 37+y_value); myTOLED.pixelSet(48+x_value , 37+y_value); myTOLED.pixelSet(50+x_value , 37+y_value); myTOLED.pixelSet(54+x_value , 37+y_value); myTOLED.pixelSet(55+x_value , 37+y_value); myTOLED.pixelSet(56+x_value , 37+y_value); myTOLED.pixelSet(59+x_value , 37+y_value); myTOLED.pixelSet(64+x_value , 37+y_value); myTOLED.pixelSet(67+x_value , 37+y_value); myTOLED.pixelSet(68+x_value , 37+y_value); myTOLED.pixelSet(69+x_value , 37+y_value);   
   ////////////////////////////////////////
 
-
-
-
-
 }
 
 
