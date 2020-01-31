@@ -131,7 +131,25 @@ void app_center3( void ){
     myTOLED.rectangleSet(x0, y0, x1, y1);               
     //myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true); 
 
-    //myTOLED.pixelSet(
+    myTOLED.pixelSet(62, 40); myTOLED.pixelSet(63, 40); myTOLED.pixelSet(64. 40);//////////////lines 134-139 are for the letter "P"
+    myTOLED.pixelSet(65, 41); myTOLED.pixelSet(65, 42);
+    myTOLED.pixelSet(64, 43); myTOLED.pixelSet(63, 43); myTOLED.pixelSet(62, 43);
+    myTOLED.pixelSet(62, 44);
+    myTOLED.pixelSet(62, 45);
+    myTOLED.pixelSet(62, 46);
+    
+    myTOLED.pixelSet(67, 40);/////////////////////////lines 141-147 are for the letter "I"
+    myTOLED.pixelSet(67, 41);
+    myTOLED.pixelSet(67, 42);
+    myTOLED.pixelSet(67, 43);
+    myTOLED.pixelSet(67, 44);
+    myTOLED.pixelSet(67, 45);
+    myTOLED.pixelSet(67, 46);
+    
+    myTOLED.pixelSet(69, 40); myTOLED.pixelSet(70, 40); myTOLED.pixelSet(71, 40);///////////////lines 149- are for the letter "C"
+    myTOLED.pixelSet(69, 41); myTOLED.pixelSet(69
+    
+    
   
 }
 
