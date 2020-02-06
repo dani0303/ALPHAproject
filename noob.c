@@ -171,6 +171,11 @@ void app_center4( void ){
     x1 = 91;
     y1 = 53;
     myTOLED.rectangleSet(x0, y0, x1, y1);               
-    //myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true); 
+    //myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true);
+
+    myTOLED(78, 43); myTOLED(79, 43); myTOLED(80, 43); myTOLED(81, 43); myTOLED(82, 43); myTOLED(83, 43); myTOLED(84, 43); myTOELD(85, 43);
+    myTOLED()
+    
   
 }
+
