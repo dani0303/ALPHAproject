@@ -179,8 +179,8 @@ void app_center4( void ){
     myTOLED(78, 46); myTOLED(81, 46); myTOLED(85, 43);
     myTOLED(78, 47); myTOLED(80, 47); myTOLED(81, 47); myTOLED(82, 47);
     myTOLED(78, 48); myTOLED(81, 48); myTOLED(83, 48); myTOLED(85, 48);
-    myTOLED
-    
-  
+    myTOLED(78, 49); myTOLED(85, 49);
+    myTOLED(78, 50); myTOLED(79, 50); myTOLED(80, 50); myTOLED(81, 50); myTOLED(81, 50); myTOLED(82, 50); myTOLED(83, 50); myTOLED(84, 50); myTOLED(85, 50);
+
 }
 
