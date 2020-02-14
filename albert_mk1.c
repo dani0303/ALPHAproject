@@ -7,12 +7,16 @@ int claw_open = 1540;
 
 int main()
 {
-    power(1200,5000);
+    //(1200,5000);
    //turn_Rt(2000, -1200);
-    
+    enable_servos();
+    set_servo_position(1, 1200);
+    msleep(2000);
     printf("Hello World\n");
     return 0;
 }
+
+
 
 
 
