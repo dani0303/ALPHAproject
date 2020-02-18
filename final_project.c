@@ -40,20 +40,8 @@ void setup() {
 
 void loop() {
 
-  if (SerialBT.available()){
-    char incomingChar = SerialBT.read();
-    if (incomingChar != '\n'){
-      message += String(incomingChar);
-    }
-    else{
-      message = "";
-    }
-    Serial.write(incomingChar);  
-  }
-
-  if (message == "pictures") {
-      Serial.println("yo");
-  }
+  app_center1();
+  
   
 }
 
@@ -428,6 +416,25 @@ void app_1_communicater ( void ) {
     }
 
   }
+
+  app_center1_selector();
+  delay(750);
+
+    for(uint8_t indi = 0; indi < 254; indi++)
+    {
+      myTOLED.setContrastControl(indi);
+      delay(5);
+    }
+    delay(5000);
+    for(uint8_t indi = 255; indi > 1; indi--)
+    {
+      myTOLED.setContrastControl(indi);
+      delay(5);
+    }
+
+  myTOLED.setContrastControl(0);
+  myTOLED.clearDisplay();
+  myTOLED.setContrastControl(128);
 
 }
 
