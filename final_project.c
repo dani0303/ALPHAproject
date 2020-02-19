@@ -41,6 +41,11 @@ void setup() {
 void loop() {
 
   app_center1();
+  app_center2();
+  app_center4();
+  delay(500);
+  app_1_communicater();
+
   
   
 }
@@ -200,36 +205,6 @@ void app_center4( void ){
 
 void app_center1_selector ( void ) {
 
-    uint8_t x0      = 0;
-    uint8_t y0      = 0;
-    uint8_t x1      = 0;
-    uint8_t y1      = 0;
-    uint8_t r       = 0;
-
-    x0 = 5;
-    y0 = 5;
-    myTOLED.pixelSet(x0, y0);  
-
-    x0 = 35;//2
-    y0 = 33;
-    x1 = 46;//2
-    y1 = 53;
-    myTOLED.rectangleSet(x0, y0, x1, y1);               
-    //myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true);
-
-
-    myTOLED.pixelSet(40, 37); myTOLED.pixelSet(41, 37);
-    myTOLED.pixelSet(40, 38); myTOLED.pixelSet(41, 38);
-    myTOLED.pixelSet(40, 40); myTOLED.pixelSet(41, 40);
-    myTOLED.pixelSet(40, 41); myTOLED.pixelSet(41, 41);
-    myTOLED.pixelSet(40, 42); myTOLED.pixelSet(41, 42);
-    myTOLED.pixelSet(40, 43); myTOLED.pixelSet(41, 43);
-    myTOLED.pixelSet(40, 44); myTOLED.pixelSet(41, 44);
-    myTOLED.pixelSet(40, 45); myTOLED.pixelSet(41, 45);
-    myTOLED.pixelSet(40, 46); myTOLED.pixelSet(41, 46);
-    myTOLED.pixelSet(40, 47); myTOLED.pixelSet(41, 47);
-    myTOLED.pixelSet(40, 48); myTOLED.pixelSet(41, 48); myTOLED.pixelSet(42, 48); myTOLED.pixelSet(43, 48);
-
     uint8_t x2      = 0;
     uint8_t y2      = 0;
     uint8_t x3      = 0;
@@ -247,38 +222,7 @@ void app_center1_selector ( void ) {
 
 void app_center2_selector( void ) {
 
-    uint8_t x0      = 0;
-    uint8_t y0      = 0;
-    uint8_t x1      = 0;
-    uint8_t y1      = 0;
-    uint8_t r       = 0;
-
-    x0 = 5;
-    y0 = 5;
-    myTOLED.pixelSet(x0, y0);  
-
-    x0 = 50;
-    y0 = 33;
-    x1 = 61;
-    y1 = 53;
-    myTOLED.rectangleSet(x0, y0, x1, y1);               
-    //myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true);
-
-    //myTOLED.pixelSet(51, 36); myTOLED.pixelSet(52, 36); 
-    //myTOLED.pixelSet(53, 37);
-    //myTOLED.pixelSet(52, 38);
-    myTOLED.pixelSet(55, 39);
-    myTOLED.pixelSet(55, 40);
-    myTOLED.pixelSet(55, 41);
-    myTOLED.pixelSet(55, 42);
-    myTOLED.pixelSet(55, 43);
-    myTOLED.pixelSet(55, 44);
-    myTOLED.pixelSet(56, 45);
-    myTOLED.pixelSet(57, 46);
-    myTOLED.pixelSet(57, 47);
-    myTOLED.pixelSet(57, 48);
-    myTOLED.pixelSet(58, 49);
-    myTOLED.pixelSet(59, 49);
+    
 
     uint8_t x4      = 0;
     uint8_t y4      = 0;
@@ -298,42 +242,7 @@ void app_center2_selector( void ) {
 
 void app_center3_selector ( void ) {
 
-    uint8_t x0      = 0;
-    uint8_t y0      = 0;
-    uint8_t x1      = 0;
-    uint8_t y1      = 0;
-    uint8_t r       = 0;
-
-    x0 = 5;
-    y0 = 5;
-    myTOLED.pixelSet(x0, y0);  
-
-    x0 = 65;
-    y0 = 33;
-    x1 = 76;
-    y1 = 53;
-    myTOLED.rectangleSet(x0, y0, x1, y1);               
-    //myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true); 
-
-    myTOLED.pixelSet(66, 40); myTOLED.pixelSet(67, 40); myTOLED.pixelSet(68, 40);//////////////lines 134-139 are for the letter "P"
-    myTOLED.pixelSet(69, 41); myTOLED.pixelSet(69, 42);
-    myTOLED.pixelSet(68, 43); myTOLED.pixelSet(67, 43); myTOLED.pixelSet(66, 43);
-    myTOLED.pixelSet(66, 44);
-    myTOLED.pixelSet(66, 45);
-    myTOLED.pixelSet(66, 46);
     
-    myTOLED.pixelSet(71, 40);/////////////////////////lines 141-147 are for the letter "I"
-    myTOLED.pixelSet(71, 41);
-    myTOLED.pixelSet(71, 42);
-    myTOLED.pixelSet(71, 43);
-    myTOLED.pixelSet(71, 44);
-    myTOLED.pixelSet(71, 45);
-    myTOLED.pixelSet(71, 46);
-    
-    myTOLED.pixelSet(73, 40); myTOLED.pixelSet(74, 40); myTOLED.pixelSet(75, 40);///////////////lines 149-151 are for the letter "C"
-    myTOLED.pixelSet(73, 41); myTOLED.pixelSet(73, 42); myTOLED.pixelSet(73, 43); myTOLED.pixelSet(73, 44); myTOLED.pixelSet(73, 45); myTOLED.pixelSet(73, 46);
-    myTOLED.pixelSet(74, 46); myTOLED.pixelSet(75, 46);
-
     uint8_t x6      = 0;
     uint8_t y6      = 0;
     uint8_t x7      = 0;
@@ -352,32 +261,7 @@ void app_center3_selector ( void ) {
 
 void app_center4_selector( void ) {
 
-    uint8_t x0      = 0;
-    uint8_t y0      = 0;
-    uint8_t x1      = 0;
-    uint8_t y1      = 0;
-    uint8_t r       = 0;
-
-    x0 = 5;
-    y0 = 5;
-    myTOLED.pixelSet(x0, y0);  
-
-    x0 = 80;
-    y0 = 33;
-    x1 = 91;
-    y1 = 53;
-    myTOLED.rectangleSet(x0, y0, x1, y1);               
-    //myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true);
-
-    myTOLED.pixelSet(82, 43); myTOLED.pixelSet(83, 43); myTOLED.pixelSet(84, 43); myTOLED.pixelSet(85, 43); myTOLED.pixelSet(86, 43); myTOLED.pixelSet(87, 43); myTOLED.pixelSet(88, 43); myTOLED.pixelSet(89, 43);
-    myTOLED.pixelSet(82, 44); myTOLED.pixelSet(89, 44);
-    myTOLED.pixelSet(82, 45); myTOLED.pixelSet(87, 45); myTOLED.pixelSet(89, 45);
-    myTOLED.pixelSet(82, 46); myTOLED.pixelSet(85, 46); myTOLED.pixelSet(89, 46);
-    myTOLED.pixelSet(82, 47); myTOLED.pixelSet(84, 47); myTOLED.pixelSet(89, 47); myTOLED.pixelSet(86, 47);
-    myTOLED.pixelSet(82, 48); myTOLED.pixelSet(85, 48); myTOLED.pixelSet(87, 48); myTOLED.pixelSet(89, 48);
-    myTOLED.pixelSet(82, 49); myTOLED.pixelSet(89, 49);
-    myTOLED.pixelSet(82, 50); myTOLED.pixelSet(83, 50); myTOLED.pixelSet(84, 50); myTOLED.pixelSet(85, 50); myTOLED.pixelSet(89, 50); myTOLED.pixelSet(86, 50); myTOLED.pixelSet(87, 50); myTOLED.pixelSet(88, 50); myTOLED.pixelSet(89, 50);
-
+    
     uint8_t x8      = 0;
     uint8_t y8      = 0;
     uint8_t x9      = 0;
@@ -391,6 +275,34 @@ void app_center4_selector( void ) {
 
     myTOLED.lineSet(x8, y8, x9, y9);
 
+}
+
+void lineTest( void )
+{
+  myTOLED.clearDisplay();
+
+  for(hd_hw_extent_t indi = 0; indi < myTOLED.xExt; indi+=5)
+  {
+    myTOLED.line(0,0,indi,myTOLED.yExt-1,1,(color_t)&color);
+    delay(10);
+  }
+  
+  for(hd_hw_extent_t indi = 0; indi < myTOLED.yExt; indi+=5)
+  {
+    myTOLED.line(0,myTOLED.yExt-1,myTOLED.xExt-1,myTOLED.yExt-indi-1,1,(color_t)&color);
+    delay(10);
+  }
+
+  for(hd_hw_extent_t indi = 0; indi < myTOLED.xExt; indi+=5)
+  {
+    myTOLED.line(myTOLED.xExt-1,myTOLED.yExt-1,myTOLED.xExt-indi-1,0,1,(color_t)&color);
+    delay(10);
+  }
+
+  for(hd_hw_extent_t indi = 0; indi < myTOLED.yExt; indi+=5)
+  {
+    myTOLED.line(myTOLED.xExt-1,0,0,indi,1,(color_t)&color);
+  }
 }
 
 void app_1_communicater ( void ) {
@@ -410,32 +322,32 @@ void app_1_communicater ( void ) {
       Serial.write(incomingChar);  
     }
 
-    if (message == "info") {
+    if (message == "art") {
         Serial.println("yo");
-        counter + 99;
-    }
 
+        app_center1_selector();
+        delay(750);
+
+        for(uint8_t indi = 0; indi < 254; indi++)
+        {
+          myTOLED.setContrastControl(indi);
+          delay(5);
+        }
+        delay(5000);
+        for(uint8_t indi = 255; indi > 1; indi--)
+        {
+          myTOLED.setContrastControl(indi);
+          delay(5);
+        }
+
+        myTOLED.setContrastControl(0);
+        myTOLED.clearDisplay();
+        myTOLED.setContrastControl(128);
+        delay(100);
+        lineTest();
+        delay(2500);
+    }
   }
-
-  app_center1_selector();
-  delay(750);
-
-    for(uint8_t indi = 0; indi < 254; indi++)
-    {
-      myTOLED.setContrastControl(indi);
-      delay(5);
-    }
-    delay(5000);
-    for(uint8_t indi = 255; indi > 1; indi--)
-    {
-      myTOLED.setContrastControl(indi);
-      delay(5);
-    }
-
-  myTOLED.setContrastControl(0);
-  myTOLED.clearDisplay();
-  myTOLED.setContrastControl(128);
-
 }
 
 /////////////////////////////////////////////////////////////////////////////////
