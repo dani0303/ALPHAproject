@@ -15,7 +15,11 @@
 
 String message = "";
 
+String command = "";
+
 char incomingChar;
+
+char incomingCmd;
 
 BluetoothSerial SerialBT;
 
@@ -48,8 +52,6 @@ void loop() {
   app_1_communicater();
   delay(500);
   app_2_communicater();
-  delay(500);
-  exit_launcher();
   
 
   
@@ -416,6 +418,9 @@ void info_page ( void ) {
   
 }
 
+
+  
+
 void app_1_communicater ( void ) {
   
    int counter = 0;
@@ -447,17 +452,15 @@ void app_1_communicater ( void ) {
         myTOLED.clearDisplay();
         myTOLED.setContrastControl(128);
         info_page();
+        exit();
       }
   }
 }
 
 
 void app_2_communicater ( void ) {
-
   int counter = 0;
-
   while(counter <= 100) {
-
      if (SerialBT.available()) {
       char incomingChar = SerialBT.read();
       if (incomingChar != '\n') {
@@ -468,7 +471,6 @@ void app_2_communicater ( void ) {
       }
       Serial.write(incomingChar);  
     }
-
     if (message == "art") {
         counter+100;
         Serial.println("yo");
@@ -482,7 +484,6 @@ void app_2_communicater ( void ) {
         myTOLED.setContrastControl(0);
         myTOLED.clearDisplay();
         myTOLED.setContrastControl(128);
-
         delay(500);
         lineTest();
         delay(500);
@@ -492,48 +493,46 @@ void app_2_communicater ( void ) {
         delay(500);
       }
     }
+}
+
+
+void exit ( void ) {
+
+  int counter2 = 0;
+  while(counter2 <= 100) {
+    if (SerialBT.available()) {
+    char incomingCmd = SerialBT.read();
+      if (incomingCmd != '\n') {
+        command += String(incomingCmd);
+      }
+      else {
+        command = "";
+      }
+      Serial.write(incomingCmd);
+    }
+    if (command == "back") {
+      counter2+100;/////////breaks out of loop
+      for(uint8_t indi=255; indi > 1; indi--) {
+        myTOLED.setContrastControl(indi);
+        delay(5);
+      }
+
+      myTOLED.setContrastControl(0);
+      myTOLED.clearDisplay();
+      myTOLED.setContrastControl(128);
+      app_center1();
+      app_center2();
+      app_center3();
+      app_center4();
+      delay(500);
+      app_1_communicater();
+      delay(500);
+      app_2_communicater();
+    }
   }
+}
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////////
-
-void exit_launcher ( void ) {
-	
-	int counter = 0;
-	
-	while (counter <= 100) {
-		
-		if (SerialBT.available()) {
-		char incomingChar = SerialBT.read();
-		if (incomingChar != '\n') {
-			message += String(incomingChar);
-		}
-		else {
-			message = "";
-		}
-		Serial.write(incomingChar);  
-	}
-
-		if (message == "back") {
-			counter+100;
-			Serial.println("yo");
-			delay(750);
-
-			for(uint8_t indi = 255; indi > 1; indi--) {
-				myTOLED.setContrastControl(indi);
-				delay(5);
-			}
-			myTOLED.setContrastControl(0);
-			myTOLED.clearDisplay();
-			myTOLED.setContrastControl(128);
-
-			app_center1();
-			app_center2();
-			app_center3();
-			app_center4();
-			delay(500);
-			app_1_communicater();
-			delay(500);
-			app_2_communicater();
-		}
-	}
-}
