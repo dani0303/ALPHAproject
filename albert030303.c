@@ -1,37 +1,54 @@
 #include <kipr/wombat.h>
 
 int cuppler = 2000;
-int counter = 0;
+int counter2 = 0;
 
-//int barrier = 
+//int barrier = don't know
     
 
 int main()
 {
     
-    mav(0, 1000);
-    mav(1, 1000);
-    msleep(2750);
-    
+    power(1000, 2750);
     starter_mode();
     ///////////////
     barrier();
-    
-    printf("Hello World\n");
+    ///////////////
+	
     return 0;
+}
+
+void turn_left( int time2 )
+{
+	mav(0, 500);///////////////TURN
+	mav(1, -500);//////////////LEFT
+	msleep(time2);
+}
+	
+
+void turn_right( int time )
+{
+	mav(0, -500);//////////TURN
+    mav(1, 500);///////////RIGHT
+    msleep(time);
+}
+	
+
+void power(int speed, int time)
+{
+	mav(0, speed);
+	mav(1, speed);
+	msleep(time);
 }
 
 void barrier( void )
 {
-    int counter2 = 0;
     while (counter2 <= 100)
 	{
         if(analog(1) <= 2000)
         {
 			counter2+100;
-            mav(0, 500);
-            mav(1, -500);
-            msleep(2500);
+            turn_left(2500);
         }
     }
 }
@@ -39,37 +56,27 @@ void barrier( void )
 void starter_mode ( void )
 {
     
-		if(analog(0) < cuppler)
-        {   
-            mav(0, 0);
-            mav(1, 0);
-            msleep(1000);
-			
-            enable_servos(0);
-            set_servo_position(0, 979);
-            
-            mav(0, -500);
-            mav(1, -500);
-            msleep(7500);
-            ////////////////
-            mav(0, 500);
-            mav(1, -500);
-            msleep(2500);
-            freeze(0);
-            freeze(1);
-            msleep(500);
-            ////////////////
-            set_servo_position(0, 0);
-            msleep(1000);
-           	
-            mav(0, -500);
-            mav(1, 500);
-            msleep(3500);
-            ao();
-            mav(0, 500);
-            mav(1, 500);
-            msleep(4000);
-        }
+	if(analog(0) < cuppler)
+	{   
+		power(0, 1000);
+		/////////////
+           
+		enable_servos(0);
+        set_servo_position(0, 979);
+        ////////////////
+        power(-500, 7500);
+        ////////////////
+        turn_left(2500);
+        freeze(0);
+        freeze(1);
+        msleep(500);
+        ////////////////
+        set_servo_position(0, 0);
+        msleep(1000);
+        /////////////////
+        turn_right(3500);
+        ao();
+    }
 }
 
 
