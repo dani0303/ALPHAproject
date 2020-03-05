@@ -4,7 +4,9 @@ int cuppler = 2000;
 int counter2 = 0;
 
 //int barrier = don't know
-    
+
+////int left_port = ;
+////int right_port = ;
 
 int main()
 {
@@ -14,6 +16,7 @@ int main()
     ///////////////
     barrier();
     ///////////////
+	mav(
 	
     return 0;
 }
@@ -78,6 +81,13 @@ void starter_mode ( void )
         ao();
     }
 }
+
+void line_follower( int time, int speed, int tape_value)
+{
+	if(analog(0) <= tape_value)
+	{
+		
+	
 
 
 
