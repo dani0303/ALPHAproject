@@ -14,9 +14,10 @@ int main()
     power(1000, 2750);
     starter_mode();
     ///////////////
-    barrier();
-    ///////////////
-	mav(
+    //////////////
+    msleep(1000);
+    
+    ramp();
 	
     return 0;
 }
@@ -27,7 +28,6 @@ void turn_left( int time2 )
 	mav(1, -500);//////////////LEFT
 	msleep(time2);
 }
-	
 
 void turn_right( int time )
 {
@@ -77,17 +77,37 @@ void starter_mode ( void )
         set_servo_position(0, 0);
         msleep(1000);
         /////////////////
-        turn_right(3500);
+        turn_right(2150);
         ao();
     }
 }
 
-void line_follower( int time, int speed, int tape_value)
+void line_follow( int speed, int value)
 {
-	if(analog(0) <= tape_value)
-	{
-		
+	int counter = 0;
 	
+	while(counter <= 10)
+	{
+		if(analog(
+
+void ramp( void )
+{
+	
+    mav(0, 1000);
+    mav(1, 1000);
+    msleep(4750);
+	
+	if(analog(1) > 2500)
+	{
+		//mav(0, 500);
+		//mav(1, -500);
+		turn_left(2300);
+        power(1000, 9500);
+	}
+	
+}
+
+
 
 
 
