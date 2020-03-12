@@ -8,18 +8,18 @@ int counter2 = 0;
 ////int left_port = ;
 ////int right_port = ;
 
-int main()
+void turn_left_line_follower( int time3 )
 {
-    
-    power(1000, 2750);///MOVES ROBOT TO PVC CUPPLER TO LOWER THE RAMP
-    starter_mode();// LOWERS THE RAMP AND BRINGS CUPPLER TO STARTING BOX
-    ///////////////
-    //////////////
-    msleep(500);///WAITS HALF A SECOND TO GO BACK TO THE RAMP AND BEGIN TO ASCEND
-    
-    ramp();/// STOPS WHEN IT DETECTS THE PVC BARRIER AND STOPS AND TURNS TO FACE THE RAMP
-	
-    return 0;
+	mav(0, -1500);
+	mav(1, 1500);
+	msleep(time3);
+}
+
+void turn_right_line_follower( int time4 )
+{
+	mav(0, 1500);
+	mav(1, -1500);
+	msleep(time4);
 }
 
 void turn_left( int time2 )///SIMPLE TURN LEFT FUNCTION turn_left(5000);
@@ -46,14 +46,11 @@ void power(int speed, int time)/// SIMPLD MOVE FORWARD FUNCTION power(1500, 5000
 
 void barrier( void )
 {
-    while (counter2 <= 100)/// RUNS THE FEW LINES OF CODE UNTIL IT DETECTS THE PVC BARRIER
-	{
         if(analog(1) <= 2000)/// ANALOG MEANS PORT 1 IN THE ANALOG SECTIONS ON THE WOMBAT
         {
-			counter2+100;/// STOPS THE WHILE LOOP FROM GOING ON FOREVER
+			//counter2+100;/// STOPS THE WHILE LOOP FROM GOING ON FOREVER
             turn_left(2500);/// TURNS LEFT TO FACE THE RAMP
         }
-    }
 }
 
 void starter_mode ( void )
@@ -81,37 +78,54 @@ void starter_mode ( void )
     }
 }
 
-//void line_follow( int speed, int time, int value)
-//{
-	//int counter = 0;
+void line_follower( int speed, int Left_port, int time )
+{
+	int starter = 0;
 	
-	//while(counter <= 10)
-	//{
-		//mav(0, speed);
-		//mav(1, speed);
-		//msleep(time);
-		
-		//if(analog(port) >= 1500)
-		//{
-			
-			
-
+	while(starter <= 10)
+	{
+		if(analog(Left_port) >= 2400)
+		{
+			turn_left_line_follower(500);
+		}
+	
+		else
+		{
+			power(speed, time);
+		}
+		starter++;
+	}
+	
+}
+	
 void ramp( void )
 {
-    power(4750);/// DRIVES TO THE PVC BARRITER TO GET READY TO GO UP THE RAMP
+    power(1000, 4750);/// DRIVES TO THE PVC BARRITER TO GET READY TO GO UP THE RAMP
 	
 	if(analog(1) > 2500)/// DETECT THE PVC BARRIER 
 	{
 		turn_left(2300);///TURNS LEFT TO FACE THE RAMP
-        power(1000, 9500);/// GOES UP THE RAMP
+        //power(1000, 9500);/// GOES UP THE RAMP
 		/////////////////////// STILL NEED TO MAKE A LINE FOLLOWER FUNCTION
 	}
 	
 }
 
 
-
-
-
-
+int main()
+{
+    
+    power(1000, 2750);///MOVES ROBOT TO PVC CUPPLER TO LOWER THE RAMP
+    starter_mode();// LOWERS THE RAMP AND BRINGS CUPPLER TO STARTING BOX
+    ///////////////
+    //////////////
+    msleep(500);///WAITS HALF A SECOND TO GO BACK TO THE RAMP AND BEGIN TO ASCEND
+    
+    ramp();/// STOPS WHEN IT DETECTS THE PVC BARRIER AND STOPS AND TURNS TO FACE THE RAMP
+	///////////////
+	line_follower(1000, 5, 4000);
+    
+	
+    return 0;
+}
 
