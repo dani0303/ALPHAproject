@@ -44,8 +44,15 @@ void setup() {
 
 void loop() {
 
-  home_page();
-  delay(25);
+  app_center1();
+  app_center2();
+  app_center3();
+  app_center4();
+  delay(500);
+  app_1_communicater();
+  delay(500);
+  app_2_communicater();
+  
 
   
   
@@ -53,19 +60,6 @@ void loop() {
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////******info app
-
-void home_page( void )
-{
-  app_center1();
-  app_center2();
-  app_center3();
-  app_center4();
-  delay(50);
-  app_1_communicater();
-  delay(50);
-  app_2_communicater();
-  delay(50);
-}
 
 
 void app_center1( void ){
@@ -445,7 +439,7 @@ void app_1_communicater ( void ) {
     }
 
     if (message == "info") {
-        counter+102;
+        counter+100;
         Serial.println("yo");
         app_center1_selector();
         delay(750);
@@ -460,11 +454,8 @@ void app_1_communicater ( void ) {
         info_page();
         exit();
       }
-  if (message == "art") {
-    app_2_communicater();
   }
-  }
- }
+}
 
 
 void app_2_communicater ( void ) {
@@ -507,7 +498,8 @@ void app_2_communicater ( void ) {
 
 void exit ( void ) {
 
-  
+  int counter2 = 0;
+  while(counter2 <= 100) {
     if (SerialBT.available()) {
     char incomingCmd = SerialBT.read();
       if (incomingCmd != '\n') {
@@ -519,7 +511,7 @@ void exit ( void ) {
       Serial.write(incomingCmd);
     }
     if (command == "back") {
-      //counter2+100;/////////breaks out of loop
+      counter2+100;/////////breaks out of loop
       for(uint8_t indi=255; indi > 1; indi--) {
         myTOLED.setContrastControl(indi);
         delay(5);
@@ -528,12 +520,20 @@ void exit ( void ) {
       myTOLED.setContrastControl(0);
       myTOLED.clearDisplay();
       myTOLED.setContrastControl(128);
+      app_center1();
+      app_center2();
+      app_center3();
+      app_center4();
       delay(500);
-      home_page();
+      app_1_communicater();
+      delay(500);
+      app_2_communicater();
     }
+  }
 }
 
 
 
 
 /////////////////////////////////////////////////////////////////////////////////
+
