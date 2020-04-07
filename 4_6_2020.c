@@ -43,11 +43,8 @@ void setup() {
 }
 
 void loop() {
-
-  app_center1();
-  app_center2();
-  app_center3();
-  app_center4();
+  
+  main_home();
   delay(500);
   app_1_communicater();
   delay(500);
@@ -60,6 +57,18 @@ void loop() {
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////******info app
+
+void repeater (void) {
+  int counter = 10;
+  while(1 < counter) {
+    main_home();
+    delay(500);
+    app_1_communicater();
+    delay(500);
+    app_2_communicater();
+  }
+  counter++;
+}
 
 
 void app_center1( void ){
@@ -209,6 +218,15 @@ void app_center4( void ){
 }
 
 ///////////////////////////////////////////////////////////////////////////
+
+void main_home( void )
+{
+  app_center1();
+  app_center2();
+  app_center3();
+  app_center4();
+  
+}
 
 
 void app_center1_selector ( void ) {
@@ -428,6 +446,7 @@ void app_1_communicater ( void ) {
   while(counter <= 100) {
 
      if (SerialBT.available()) {
+      counter + 104;
       char incomingChar = SerialBT.read();
       if (incomingChar != '\n') {
         message += String(incomingChar);
@@ -511,7 +530,7 @@ void exit ( void ) {
       Serial.write(incomingCmd);
     }
     if (command == "back") {
-      counter2+100;/////////breaks out of loop
+      //counter2+101;/////////breaks out of loop
       for(uint8_t indi=255; indi > 1; indi--) {
         myTOLED.setContrastControl(indi);
         delay(5);
@@ -520,10 +539,35 @@ void exit ( void ) {
       myTOLED.setContrastControl(0);
       myTOLED.clearDisplay();
       myTOLED.setContrastControl(128);
-      app_center1();
-      app_center2();
-      app_center3();
-      app_center4();
+      repeater();
+    }
+  }
+}
+
+void exit_a ( void ) {
+  int counter3 = 0;
+  while(counter3 <= 100) {
+    if (SerialBT.available()) {
+    char incomingCmd = SerialBT.read();
+      if (incomingCmd != '\n') {
+        command += String(incomingCmd);
+      }
+      else {
+        command = "";
+      }
+      Serial.write(incomingCmd);
+    }
+    if (command == "back") {
+      counter3+101;/////////breaks out of loop
+      for(uint8_t indi=255; indi > 1; indi--) {
+        myTOLED.setContrastControl(indi);
+        delay(5);
+      }
+
+      myTOLED.setContrastControl(0);
+      myTOLED.clearDisplay();
+      myTOLED.setContrastControl(128);
+      main_home();
       delay(500);
       app_1_communicater();
       delay(500);
@@ -531,6 +575,11 @@ void exit ( void ) {
     }
   }
 }
+
+  
+ 
+
+
 
 
 
