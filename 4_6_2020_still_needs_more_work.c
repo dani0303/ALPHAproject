@@ -46,8 +46,8 @@ void loop() {
   
   main_home();
   delay(500);
-  app_1_communicater();
-  delay(500);
+  //app_1_communicater();
+  //delay(500);
   app_2_communicater();
   
 
@@ -58,17 +58,7 @@ void loop() {
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////******info app
 
-void repeater (void) {
-  int counter = 10;
-  while(1 < counter) {
-    main_home();
-    delay(500);
-    app_1_communicater();
-    delay(500);
-    app_2_communicater();
-  }
-  counter++;
-}
+
 
 
 void app_center1( void ){
@@ -306,29 +296,59 @@ void app_center4_selector( void ) {
 void lineTest( void )
 {
   myTOLED.clearDisplay();
-
-  for(hd_hw_extent_t indi = 0; indi < myTOLED.xExt; indi+=5)
-  {
-    myTOLED.line(0,0,indi,myTOLED.yExt-1,1,(color_t)&color);
-    delay(10);
-  }
   
-  for(hd_hw_extent_t indi = 0; indi < myTOLED.yExt; indi+=5)
-  {
-    myTOLED.line(0,myTOLED.yExt-1,myTOLED.xExt-1,myTOLED.yExt-indi-1,1,(color_t)&color);
-    delay(10);
-  }
+  int counter = 2;
+  
+  while(counter < 10) {////////////////////made a while loop so that it could go back to home screen while doing art show
+    int counter2 = 2;///////////////////setting up counter to run loop
+    while(counter2 <= 10)
+    {
+      if (SerialBT.available()) {///////////setting up communication by sending signal to Bluetooth server
+        char incomingCmd = SerialBT.read();/////////////will pickup words coming from the bluetooth device
+        
+        if (incomingCmd != '\n') {////////////////////breaks a single line of text so it won't look like this "hellohellohellohellohellohellohellohello"
+          command += String(incomingCmd);
+        }
+        else {
+          command = "";
+        }
+        Serial.write(incomingCmd);
+      }
+      
+      int counter_3 = 2;
+      
+      while(counter_3 <= 10) {///////////////has the art show run while the exit function is placed so the user can back to the home screen
+        if(command != "back") {////////////////if the command coming from the bluetooth device(phone) is not "back" then it will do the art show
+          
+          for(hd_hw_extent_t indi = 0; indi < myTOLED.xExt; indi+=5)
+          {
+          myTOLED.line(0,0,indi,myTOLED.yExt-1,1,(color_t)&color);
+          delay(10);
+          }
+          
+          for(hd_hw_extent_t indi = 0; indi < myTOLED.yExt; indi+=5)
+          {
+          myTOLED.line(0,myTOLED.yExt-1,myTOLED.xExt-1,myTOLED.yExt-indi-1,1,(color_t)&color);
+          delay(10);
+          }
 
-  for(hd_hw_extent_t indi = 0; indi < myTOLED.xExt; indi+=5)
-  {
-    myTOLED.line(myTOLED.xExt-1,myTOLED.yExt-1,myTOLED.xExt-indi-1,0,1,(color_t)&color);
-    delay(10);
-  }
+          for(hd_hw_extent_t indi = 0; indi < myTOLED.xExt; indi+=5)
+          {
+          myTOLED.line(myTOLED.xExt-1,myTOLED.yExt-1,myTOLED.xExt-indi-1,0,1,(color_t)&color);
+          delay(10);
+          }
 
-  for(hd_hw_extent_t indi = 0; indi < myTOLED.yExt; indi+=5)
-  {
-    myTOLED.line(myTOLED.xExt-1,0,0,indi,1,(color_t)&color);
-  }
+          for(hd_hw_extent_t indi = 0; indi < myTOLED.yExt; indi+=5)
+          {
+          myTOLED.line(myTOLED.xExt-1,0,0,indi,1,(color_t)&color);
+          }
+        }
+        if(command == "back") {////////////////if the command is "back" then it will go through the disappear sequence
+          for(uint8_t indi=255; indi > 1; indi--) {
+          myTOLED.setContrastControl(indi);
+          delay(5);
+        }
+      }
 }
 
 void rectTest ( void ) {
@@ -471,7 +491,7 @@ void app_1_communicater ( void ) {
         myTOLED.clearDisplay();
         myTOLED.setContrastControl(128);
         info_page();
-        exit();
+        //exit();
       }
   }
 }
@@ -505,13 +525,29 @@ void app_2_communicater ( void ) {
         myTOLED.setContrastControl(128);
         delay(500);
         lineTest();
-        delay(500);
-        rectTest();
-        delay(500);
-        circleTest();
-        delay(500);
+    
+    int counter2 = 0;
+    
+    while(counter <= 100) {
+      if(SerialBT.available()) {
+        char incomingCmd = SerialBT.read();
+        if(incomingCmd != '\n') {
+          command += String(incomingCmd);
+        }
+        else {
+          command = "";
+        }
+        Serial.write(incomingChar);
+      }
+      if(command == "back") {
+        for(uint8_t indi=255; indi>1; indi--) {
+          myTOLED.setContrastControl(indi);
+          delay(5);
+        }
       }
     }
+  }
+  }
 }
 
 
@@ -539,45 +575,12 @@ void exit ( void ) {
       myTOLED.setContrastControl(0);
       myTOLED.clearDisplay();
       myTOLED.setContrastControl(128);
-      repeater();
     }
   }
 }
 
-void exit_a ( void ) {
-  int counter3 = 0;
-  while(counter3 <= 100) {
-    if (SerialBT.available()) {
-    char incomingCmd = SerialBT.read();
-      if (incomingCmd != '\n') {
-        command += String(incomingCmd);
-      }
-      else {
-        command = "";
-      }
-      Serial.write(incomingCmd);
-    }
-    if (command == "back") {
-      counter3+101;/////////breaks out of loop
-      for(uint8_t indi=255; indi > 1; indi--) {
-        myTOLED.setContrastControl(indi);
-        delay(5);
-      }
 
-      myTOLED.setContrastControl(0);
-      myTOLED.clearDisplay();
-      myTOLED.setContrastControl(128);
-      main_home();
-      delay(500);
-      app_1_communicater();
-      delay(500);
-      app_2_communicater();
-    }
-  }
-}
 
-  
- 
 
 
 
